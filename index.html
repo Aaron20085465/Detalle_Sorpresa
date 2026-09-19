@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Para ti 🌻</title>
+
+    <!-- Fuentes -->
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CSS propio -->
+    <link rel="stylesheet"
+        href="estilos.css">
+</head>
+
+
+<body>
+
+    <!-- ================================================= -->
+    <!-- ESTRELLAS -->
+    <!-- ================================================= -->
+
+    <canvas id="stars"></canvas>
+
+
+    <!-- ================================================= -->
+    <!-- LUNA -->
+    <!-- ================================================= -->
+
+    <div class="moon">
+        <div class="moon-glow"></div>
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- BOTÓN DE MÚSICA -->
+    <!-- ================================================= -->
+
+    <button id="music-toggle"
+        class="music-button"
+        title="Reproducir música"
+        aria-label="Reproducir música">
+
+        🎵
+
+    </button>
+
+
+    <!-- ================================================= -->
+    <!-- MÚSICA -->
+    <!-- ================================================= -->
+
+    <audio id="bg-music"
+        src="flores_amarillas-mp3.mp3"
+        loop
+        preload="auto">
+    </audio>
+
+
+    <!-- ================================================= -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ================================================= -->
+
+    <main class="main-container">
+
+        <p class="small-title">
+            21 • 09 • 2026
+        </p>
+
+
+        <h1>
+            Hay detalles que no se compran...
+        </h1>
+
+
+        <h2>
+            Para ti 🌻
+        </h2>
+
+
+        <p class="subtitle">
+            Porque algunas personas merecen algo más
+            que un simple regalo.
+        </p>
+
+
+        <!-- ================================================= -->
+        <!-- RAMO -->
+        <!-- ================================================= -->
+
+        <div class="bouquet-container">
+
+            <svg id="bouquet"
+                class="bouquet"
+                viewBox="0 0 400 400"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <!-- ========================================= -->
+                <!-- GRADIENTES -->
+                <!-- ========================================= -->
+
+                <defs>
+
+                    <!-- Tallos -->
+                    <linearGradient
+                        id="stemGradient"
+                        x1="0"
+                        y1="0"
+                        x2="1"
+                        y2="1">
+
+                        <stop
+                            offset="0%"
+                            stop-color="#315d20" />
+
+                        <stop
+                            offset="50%"
+                            stop-color="#4f8c2f" />
+
+                        <stop
+                            offset="100%"
+                            stop-color="#244b1a" />
+
+                    </linearGradient>
+
+
+                    <!-- Pétalos -->
+                    <radialGradient
+                        id="petalGradient">
+
+                        <stop
+                            offset="0%"
+                            stop-color="#fff36a" />
+
+                        <stop
+                            offset="55%"
+                            stop-color="#ffd52f" />
+
+                        <stop
+                            offset="100%"
+                            stop-color="#eaa900" />
+
+                    </radialGradient>
+
+
+                    <radialGradient
+                        id="petalGradient2">
+
+                        <stop
+                            offset="0%"
+                            stop-color="#fff78b" />
+
+                        <stop
+                            offset="55%"
+                            stop-color="#ffc928" />
+
+                        <stop
+                            offset="100%"
+                            stop-color="#dc9700" />
+
+                    </radialGradient>
+
+
+                    <!-- Maceta -->
+                    <linearGradient
+                        id="potGradient"
+                        x1="0"
+                        y1="0"
+                        x2="1"
+                        y2="1">
+
+                        <stop
+                            offset="0%"
+                            stop-color="#d97843" />
+
+                        <stop
+                            offset="50%"
+                            stop-color="#b9512d" />
+
+                        <stop
+                            offset="100%"
+                            stop-color="#85361f" />
+
+                    </linearGradient>
+
+                </defs>
+
+
+                <!-- ================================================= -->
+                <!-- SOMBRA DE LA MACETA -->
+                <!-- ================================================= -->
+
+                <ellipse
+                    cx="200"
+                    cy="382"
+                    rx="95"
+                    ry="13"
+                    fill="rgba(0,0,0,0.35)" />
+
+
+                <!-- ================================================= -->
+                <!-- MACETA - CUERPO -->
+                <!-- ================================================= -->
+
+                <path
+                    class="pot-body"
+                    d="M125 327
+                       L275 327
+                       L258 375
+                       Q200 393 142 375
+                       Z"
+                    fill="url(#potGradient)" />
+
+
+                <!-- Brillo de la maceta -->
+
+                <path
+                    d="M145 340
+                       Q150 360 158 372"
+                    fill="none"
+                    stroke="rgba(255,255,255,0.18)"
+                    stroke-width="5"
+                    stroke-linecap="round" />
+
+
+                <!-- ================================================= -->
+                <!-- TIERRA -->
+                <!-- ================================================= -->
+
+                <ellipse
+                    class="pot-dirt"
+                    cx="200"
+                    cy="329"
+                    rx="76"
+                    ry="18"
+                    fill="#432716" />
+
+
+                <ellipse
+                    cx="200"
+                    cy="326"
+                    rx="67"
+                    ry="12"
+                    fill="#5a341e" />
+
+
+                <!-- Pequeños detalles de tierra -->
+
+                <circle
+                    cx="170"
+                    cy="327"
+                    r="2"
+                    fill="#2d1a10" />
+
+                <circle
+                    cx="192"
+                    cy="322"
+                    r="2"
+                    fill="#2d1a10" />
+
+                <circle
+                    cx="218"
+                    cy="330"
+                    r="2"
+                    fill="#2d1a10" />
+
+                <circle
+                    cx="237"
+                    cy="325"
+                    r="2"
+                    fill="#2d1a10" />
+
+
+                <!-- ================================================= -->
+                <!-- BORDE DE LA MACETA -->
+                <!-- ================================================= -->
+
+                <path
+                    class="pot-rim"
+                    d="M120 315
+                       Q200 300 280 315
+                       L275 337
+                       Q200 351 125 337
+                       Z"
+                    fill="url(#potGradient)" />
+
+
+                <ellipse
+                    cx="200"
+                    cy="316"
+                    rx="80"
+                    ry="18"
+                    fill="#a94526" />
+
+
+                <ellipse
+                    cx="200"
+                    cy="318"
+                    rx="72"
+                    ry="13"
+                    fill="#4b2b19" />
+
+
+                <!-- ================================================= -->
+                <!-- AQUÍ SE INSERTAN LAS FLORES CON JS -->
+                <!-- ================================================= -->
+
+            </svg>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- BOTONES -->
+        <!-- ================================================= -->
+
+        <div class="buttons-container">
+
+            <button id="open-btn"
+                class="main-button">
+
+                ❤️ Abrir mi pequeño detalle
+
+            </button>
+
+
+            <button id="replay-btn"
+                class="replay-button">
+
+                🔄 Volver a florecer
+
+            </button>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- FRASE -->
+        <!-- ================================================= -->
+
+        <p class="bottom-message">
+            Algunas flores duran unos días...
+            <br>
+            pero algunos recuerdos duran para siempre. 🌻
+        </p>
+
+    </main>
+
+
+    <!-- ================================================= -->
+    <!-- MODAL -->
+    <!-- ================================================= -->
+
+    <div id="modal"
+        class="modal pointer-events-none opacity-0">
+
+        <div id="modal-card"
+            class="modal-card scale-95">
+
+
+            <!-- BOTÓN CERRAR -->
+
+            <button class="close-btn"
+                aria-label="Cerrar">
+
+                ×
+
+            </button>
+
+
+            <!-- ================================================= -->
+            <!-- TÍTULO DEL MODAL -->
+            <!-- ================================================= -->
+
+            <div class="letter-header">
+
+                <span>
+                    💌
+                </span>
+
+                <h2>
+                    Unas pequeñas palabras para ti
+                </h2>
+
+                <p>
+                    He guardado cinco pequeños momentos
+                    dentro de estas flores.
+                </p>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- MENÚ DE CARTAS -->
+            <!-- ================================================= -->
+
+            <div id="cards-container">
+
+                <div class="cards-grid">
+
+
+                    <button class="mini-card"
+                        data-card="0">
+
+                        <span class="card-number">
+                            01
+                        </span>
+
+                        <span class="card-icon">
+                            🌻
+                        </span>
+
+                        <span class="card-title">
+                            Para ti
+                        </span>
+
+                        <span class="card-hint">
+                            Abrir
+                        </span>
+
+                    </button>
+
+
+                    <button class="mini-card"
+                        data-card="1">
+
+                        <span class="card-number">
+                            02
+                        </span>
+
+                        <span class="card-icon">
+                            💛
+                        </span>
+
+                        <span class="card-title">
+                            Lo que significan
+                        </span>
+
+                        <span class="card-hint">
+                            Abrir
+                        </span>
+
+                    </button>
+
+
+                    <button class="mini-card"
+                        data-card="2">
+
+                        <span class="card-number">
+                            03
+                        </span>
+
+                        <span class="card-icon">
+                            ✨
+                        </span>
+
+                        <span class="card-title">
+                            Un recuerdo
+                        </span>
+
+                        <span class="card-hint">
+                            Abrir
+                        </span>
+
+                    </button>
+
+
+                    <button class="mini-card"
+                        data-card="3">
+
+                        <span class="card-number">
+                            04
+                        </span>
+
+                        <span class="card-icon">
+                            🌙
+                        </span>
+
+                        <span class="card-title">
+                            Algo especial
+                        </span>
+
+                        <span class="card-hint">
+                            Abrir
+                        </span>
+
+                    </button>
+
+
+                    <button class="mini-card"
+                        data-card="4">
+
+                        <span class="card-number">
+                            05
+                        </span>
+
+                        <span class="card-icon">
+                            ❤️
+                        </span>
+
+                        <span class="card-title">
+                            Para terminar
+                        </span>
+
+                        <span class="card-hint">
+                            Abrir
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- ÁREA DE MENSAJE -->
+            <!-- ================================================= -->
+
+            <div id="message-area"
+                class="message-area hidden">
+
+
+                <div id="letter-icon"
+                    class="letter-icon">
+                    🌻
+                </div>
+
+
+                <h3 id="letter-title">
+                    Para ti
+                </h3>
+
+
+                <div class="message-divider">
+                    ✦
+                </div>
+
+
+                <p id="letter-text"
+                    class="letter-text">
+                </p>
+
+
+                <!-- ================================================= -->
+                <!-- NAVEGACIÓN -->
+                <!-- ================================================= -->
+
+                <div class="card-navigation">
+
+                    <button id="prev-card"
+                        class="nav-button">
+
+                        ← Anterior
+
+                    </button>
+
+
+                    <div id="card-dots"
+                        class="card-dots">
+
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+
+                    </div>
+
+
+                    <button id="next-card"
+                        class="nav-button">
+
+                        Siguiente →
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- FIRMA -->
+            <!-- ================================================= -->
+
+            <div class="signature">
+
+                <span>
+                    Con cariño,
+                </span>
+
+                <strong>
+                    A....
+                </strong>
+
+                <span>
+                    🌻
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
